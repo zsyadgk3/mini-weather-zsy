@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:background="#ffcd2626" >
+
+        <ImageView
+            android:id="@+id/title_back"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/title_update"
+            />
+        <ImageView
+            android:layout_width="1.0dip"
+            android:layout_height="40dip"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@id/title_back"
+            android:id="@+id/imag1"
+            android:background="#A71717"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="当前城市：北京"
+            android:textColor="#ffffffff"
+            android:layout_toRightOf="@id/imag1"
+            android:textSize="20.0dip" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <EditText
+        android:id="@+id/aba"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/title_name"
+        android:hint="输入搜索城市"
+        />
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+
+        android:text="搜索"
+        android:layout_toRightOf="@id/title_name"
+        />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </ListView>
+</LinearLayout>
