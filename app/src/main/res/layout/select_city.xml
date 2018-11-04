@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/title_name"
         android:hint="输入搜索城市"
+        android:background="@drawable/contact_search_box_edittext_keyword_background"
         />
     <Button
         android:id="@+id/button10"

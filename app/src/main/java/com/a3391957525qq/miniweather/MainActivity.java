@@ -7,6 +7,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -106,6 +111,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
             Log.d("myWeather", cityCode);
             if (NetUtil.getNetworkState(this) != NetUtil.NETWORN_NONE) {
                 Log.d("myWeather", "网络OK");
+                Animation animation = AnimationUtils.loadAnimation(this,R.anim.loate);
+                LinearInterpolator lin = new LinearInterpolator();//设置动画匀速运动
+                animation.setInterpolator(lin);
+                mUpdateBtn.startAnimation(animation);
                 queryWeatherCode(cityCode);
             } else {
                 Log.d("myWeather", "网络挂了");
@@ -273,6 +282,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         windTv.setText("风力:" + todayWeather.getFengli());
         T_W.setText("温度："+todayWeather.getWendu()+"度");
         Image(weatherImg,climateTv);
+        mUpdateBtn.clearAnimation();
         Toast.makeText(MainActivity.this, "更新成功！", Toast.LENGTH_SHORT).show();
 
     }
